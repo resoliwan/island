@@ -54,12 +54,13 @@ export class FatalError extends AbstractFatalError {
 
 export namespace ISLAND {
   export enum LOGIC {
-    L0001_PLAYER_NOT_EXIST = 1,
-    L0002_WRONG_PARAMETER_SCHEMA = 2,
-    L0003_NOT_INITIALIZED_EXCEPTION = 3,
-    L0004_MSG_PACK_ERROR = 4,
-    L0005_MSG_PACK_ENCODE_ERROR = 5,
-    L0006_HANDLE_MESSAGE_ERROR = 6,
+    L0001_PLAYER_NOT_EXIST            = 1,
+    L0002_WRONG_PARAMETER_SCHEMA      = 2,
+    L0003_NOT_INITIALIZED_EXCEPTION   = 3,
+    L0004_MSG_PACK_ERROR              = 4,
+    L0005_MSG_PACK_ENCODE_ERROR       = 5,
+    L0006_HANDLE_MESSAGE_ERROR        = 6,
+    L0007_NOT_IMPLEMENTED             = 7,
   }
 
   export enum FATAL {

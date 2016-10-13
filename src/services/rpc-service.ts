@@ -118,6 +118,10 @@ function enterScope(properties: any, func): Promise<any> {
   });
 }
 
+export class ExternalRpc {
+  test() { throw new LogicError(ISLAND.LOGIC.L0007_NOT_IMPLEMENTED) }
+}
+
 export default class RPCService {
   private consumerInfosMap: { [name: string]: IConsumerInfo } = {};
   private responseQueue: string;
@@ -126,9 +130,12 @@ export default class RPCService {
   private reqTimeouts: {[corrId: string]: any} = {};
   private channelPool: AmqpChannelPoolService;
   private serviceName: string;
+  
+  externalRpc: ExternalRpc;
 
   constructor(serviceName?: string) {
     this.serviceName = serviceName || 'unknown';
+    this.externalRpc = new ExternalRpc();
   }
 
   public async initialize(channelPool: AmqpChannelPoolService): Promise<any> {
